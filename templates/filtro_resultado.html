@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado do Filtro</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Resultado do Filtro</h1>
+    <p>Quantidade de Resultados: {{ num_resultados }}</p>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for col in resultado.columns %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultado.values %}
+                <tr>
+                    {% for val in row %}
+                        <td>{{ val }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

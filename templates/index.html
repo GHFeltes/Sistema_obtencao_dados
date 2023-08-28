@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AutoStats</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao AutoStats!</h1>
+        <p>Um sistema para obtenção de dados e estatísticas a partir de uma base de dados de preços de automóveis.</p>
+        <div class="links">
+            <a href="{{ url_for('info_descritivas') }}">Informações Descritivas</a>
+            <a href="{{ url_for('filtrar') }}">Filtrar Registros</a>
+            <a href="{{ url_for('agrupar') }}">Agrupar Registros</a>
+        </div>
+    </div>
+</body>
+</html>

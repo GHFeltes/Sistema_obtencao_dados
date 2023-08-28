@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Informações Descritivas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Informações Descritivas</h1>
+    <p>Quantidade de Registros: {{ num_rows }}</p>
+    <p>Quantidade de Colunas: {{ num_columns }}</p>
+    <h2>Informações das Colunas:</h2>
+    <ul>
+        {% for col in column_info %}
+            <li>{{ col.name }} ({{ col.type }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Estatísticas Numéricas:</h2>
+    {{ stats.to_html()|safe }}
+</body>
+</html>

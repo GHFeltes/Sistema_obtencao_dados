@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agrupar Registros</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Agrupar Registros</h1>
+    <form method="post" action="{{ url_for('agrupar') }}">
+        <label for="coluna_agrupamento">Escolha a Coluna de Agrupamento:</label>
+        <select name="coluna_agrupamento">
+            {% for col in colunas %}
+                <option value="{{ col }}">{{ col }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="funcao_agregacao">Escolha a Função de Agregação:</label>
+        <select name="funcao_agregacao">
+            <option value="max">Máximo</option>
+            <option value="min">Mínimo</option>
+            <option value="mean">Média</option>
+            <option value="std">Desvio Padrão</option>
+        </select>
+        <br>
+        <input type="submit" value="Agrupar">
+    </form>
+</body>
+</html>
